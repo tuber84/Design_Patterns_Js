@@ -1,0 +1,29 @@
+[33mcommit 2340b5c549234edcbcd63e4d731a91d718ce0ac9[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: tuber84 <tuberkulum@gmail.com>
+Date:   Sat Jul 2 23:47:26 2022 +0400
+
+        базовый пример входа пользователя ,его проверки без использования паттерна
+
+[1mdiff --git a/js/script.js b/js/script.js[m
+[1mindex 2a5d8a9..78d4ba3 100644[m
+[1m--- a/js/script.js[m
+[1m+++ b/js/script.js[m
+[36m@@ -23,7 +23,7 @@[m [mfunction getUser(id) {[m
+ function printUeser(id) {[m
+   const user = getUser(id);[m
+ [m
+[31m-  let name = "Guest"; //вынуждены каждыц раз проверять на гостя[m
+[32m+[m[32m  let name = "Guest"; //вынуждены каждый раз проверять на гостя[m
+   if (user != null && user.name != null) name = user.name;[m
+   console.log("Hellow " + name);[m
+ [m
+[36m@@ -33,7 +33,7 @@[m [mfunction printUeser(id) {[m
+     console.log("You are not allowed here");[m
+   }[m
+ }[m
+[31m-[m
+[32m+[m[32m// все эти проверки на null каждый раз- это плохо, можно лучше![m
+ printUeser(3)[m
+ [m
+ // ----------------------------------------------------------------------------[m
+\ No newline at end of file[m

@@ -12,28 +12,41 @@ class User {
     return this.name == "Yuriy";
   }
 }
+class NullUser {
+  constructor() {
+    this.id = -1;
+    this.name = "Guest";
+  }
+  hasAccess() {
+    return false;
+  }
+}
 
 const users = [new User(1, "Yuriy"), new User(2, "Piter")];
 // console.log(users)
 
 function getUser(id) {
-  return users.find((element) => element.id == id);
+  const user = users.find((element) => element.id == id);
+  if (user == null) {
+    return  new NullUser();
+  }else{
+    return user;
+  }
 }
 
 function printUeser(id) {
   const user = getUser(id);
 
-  let name = "Guest"; //вынуждены каждый раз проверять на гостя
-  if (user != null && user.name != null) name = user.name;
-  console.log("Hellow " + name);
 
-  if (user != null && user.hasAccess != null && user.hasAccess()) {
+  console.log("Hellow " + user.name);
+
+  if (user.hasAccess()) {
     console.log("You have access");
   } else {
     console.log("You are not allowed here");
   }
 }
 // все эти проверки на null каждый раз- это плохо, можно лучше!
-printUeser(3)
+printUeser(1);
 
 // ----------------------------------------------------------------------------
