@@ -23,7 +23,7 @@ function getUser(id) {
 function printUeser(id) {
   const user = getUser(id);
 
-  let name = "Guest"; //вынуждены каждыц раз проверять на гостя
+  let name = "Guest"; //вынуждены каждый раз проверять на гостя
   if (user != null && user.name != null) name = user.name;
   console.log("Hellow " + name);
 
@@ -33,7 +33,7 @@ function printUeser(id) {
     console.log("You are not allowed here");
   }
 }
-
+// все эти проверки на null каждый раз- это плохо, можно лучше!
 printUeser(3)
 
 // ----------------------------------------------------------------------------
