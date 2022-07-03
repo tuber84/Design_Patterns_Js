@@ -36,17 +36,20 @@ function getUser(id) {
 
 function printUeser(id) {
   const user = getUser(id);
+  let box = document.querySelector('.alcohol_user')
 
+  box.innerHTML = "Hellow, " + user.name +" !";
 
-  console.log("Hellow " + user.name);
 
   if (user.hasAccess()) {
-    console.log("You have access");
+    box.innerHTML += "You have access"
+    
   } else {
-    console.log("You are not allowed here");
+    box.innerHTML += "You are not allowed here"
+    
   }
 }
 // все эти проверки на null каждый раз- это плохо, можно лучше!
-printUeser(1);
+printUeser(3);
 
 // ----------------------------------------------------------------------------
